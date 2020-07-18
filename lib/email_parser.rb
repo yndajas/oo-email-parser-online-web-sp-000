@@ -10,6 +10,7 @@ class EmailAddressParser
   
   def initialize(list)
     @email_addresses = list
+<<<<<<< HEAD
     parse
   end
   
@@ -20,9 +21,26 @@ class EmailAddressParser
     all_emails.each do |email| # iterate over split emails and add them to unique_emails only if unique_emails doesn't already contain the email
       if !unique_emails.include?(email)
         unique_emails << email
+=======
+    self.parse!
+  end
+  
+  def parse
+    @email_addresses.split(/, | /)
+  end
+  
+  def unique
+    unique_emails = []
+    @email_addresses.each do |email_address|
+      if !unique_emails.include?(email_address)
+        unique_emails << email_address
+>>>>>>> c7901c8fa3d86e79500cda166048d4b813589371
       end
     end
     unique_emails
   end
+<<<<<<< HEAD
   
+=======
+>>>>>>> c7901c8fa3d86e79500cda166048d4b813589371
 end
